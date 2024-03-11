@@ -1,0 +1,58 @@
+/**
+ * Tailwind CSS imports
+ * View the full documentation at https://tailwindcss.com
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    .title{
+        @apply w-20 h-4 m-2 rounded-md text-white bg-orange-400;
+    }
+    table {
+        @apply border border-white rounded-lg text-white; 
+        border-collapse: collapse; 
+        width: 100%; 
+        overflow: hidden; 
+        background-color: rgba(0, 0, 0, 0.5); 
+    }
+    th,
+    td {
+        @apply px-4 py-2 text-center; 
+    }
+}
+    input{
+        @apply p-1 rounded-md text-black focus:outline-none focus:border-orange-300 focus:border-2;
+    }
+    select{
+        @apply p-1 rounded-md text-black focus:outline-none focus:border-orange-300 focus:border-2;
+
+    }
+    button{
+        @apply px-2 py-1 rounded-md text-white ;
+    }
+    .button{
+        @apply px-2 py-[7px]  rounded-md text-white cursor-pointer;
+    }
+    i{
+        @apply ml-1;
+    }
+    .button-filter{
+        @apply w-52 mt-4 mr-3 text-black bg-orange-300;
+    }
+
+    .button-filter-highlighted{
+        @apply w-52 mt-4 mr-3  text-black bg-orange-400;
+    }
+
+
+
+body{
+    background-image: url(/fondonegro.jpg);
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
