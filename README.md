@@ -7,3 +7,4 @@ Aplicación de tipo CRUD con el frontend en Qwik y el backend en FastAPI (Python
 <img src="img/descendente.png">
 <img src="img/disponibles.png">
 <img src="img/nodisponible.png">
+<img src="img/datalist.png">
