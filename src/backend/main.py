@@ -23,6 +23,10 @@ class Plato(BaseModel):
     precio: float
     disponibilidad: bool
 
+# Esto ayuda a FastAPI a validar los tipos de datos entrantes.
+class Categoria(BaseModel):
+    categoria: str
+
 # Crea la instancia de la aplicación FastAPI
 app = FastAPI()
 
@@ -44,11 +48,26 @@ MONGODB_URL = "mongodb://admin:123@mongodb:27017/?authSource=admin"
 client = motor.motor_asyncio.AsyncIOMotorClient(MONGODB_URL)
 db = client.mesondb
 
+# Endpoint para listar todas los categorias.
+@app.get("/categorias/", response_description="Lista todas las categorias", response_model=List[Categoria])
+async def list_categorias():
+    categorias = await db["categorias"].find().to_list(1000)
+    return categorias
+
+# Endpoint para crear una nueva categoria.
+@app.post("/categorias/", response_description="Añade una nueva categoria", response_model=Categoria)
+async def create_categoria(categoria: Categoria):
+    categoria_dict = categoria.dict()
+    await db["categorias"].insert_one(categoria_dict)
+    return categoria
+
 # Endpoint para listar todos los platos.
-@app.get("/platos/", response_description="Lista todos los platos", response_model=List[Plato])
+@app.get("/platos/", response_description="Lista todas las categorias", response_model=List[Plato])
 async def list_platos():
     platos = await db["platos"].find().to_list(1000)
     return platos
+
+
 
 # Endpoint para crear un nuevo plato.
 @app.post("/platos/", response_description="Añade un nuevo plato", response_model=Plato)

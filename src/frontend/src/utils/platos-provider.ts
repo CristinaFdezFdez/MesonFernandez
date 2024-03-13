@@ -1,6 +1,8 @@
 //Funciones de acceso a la API de platos
 
 import { Plato } from "~/models/plato"
+import { addCategoria } from "./categorias-provider"
+import { Categoria } from "~/models/categoria"
 
 // Obtiene todos los usuarios
 export const getPlatos = async (): Promise<Plato[]> =>{
@@ -73,6 +75,7 @@ export const addPlato = async (plato: Plato) =>{
             },
             body: JSON.stringify(plato),
         })
+        await addCategoria(<Categoria>{categoria: plato.categoria})
     } catch (error) {
         console.error(error)
     }

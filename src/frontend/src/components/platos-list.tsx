@@ -1,13 +1,16 @@
 import { component$, useStore, useTask$, useVisibleTask$, $, useSignal } from '@builder.io/qwik';
 import { get } from 'http';
+import { Categoria } from '~/models/categoria';
 import { Plato } from '~/models/plato';
 import { addPlato, getBarato, getDisponibles, getPlatos, getnoDisponibles, updatePlato } from '~/utils/platos-provider';
 import { deletePlatoById, getCaros } from '../utils/platos-provider';
+import { addCategoria, getCategorias } from '~/utils/categorias-provider';
 
 export const PlatosList = component$(() => {
 
-    const store = useStore<{ platos: Plato[] }>({
-        platos: []
+    const store = useStore<{ platos: Plato[], categorias: Categoria[]}>({
+        platos: [],
+        categorias: []        
     })
 
     const form = useStore({
@@ -19,7 +22,7 @@ export const PlatosList = component$(() => {
 
     })
 
-    const deleteUser = $(async (nombre: string) => {
+    const deletePlato = $(async (nombre: string) => {
         await deletePlatoById(nombre)
         store.platos = await getPlatos()
     })
@@ -30,16 +33,24 @@ export const PlatosList = component$(() => {
 
     const platoPrecio = useSignal("Todos")
 
+
     useTask$(async () => {
         console.log("Desde useTask")
     })
     useVisibleTask$(async () => {
         console.log("Desde useVisibleTask")
         store.platos = await getPlatos()
+        store.categorias = await getCategorias()
     })
+
 
     const handleSubmit = $(async (event) => {
         event.preventDefault() // Evita el comportaminento por defecto 
+         // Limpiar espacios en blanco del principio y final de cada campo del formulario
+            form.nombre = form.nombre.trim();
+            form.descripcion = form.descripcion.trim();
+            form.categoria = form.categoria.trim();
+         // No es necesario limpiar el precio porque es un número
         if (addOrModify.value === 'Añadir') {
             await addPlato(form)
         } else {
@@ -47,6 +58,7 @@ export const PlatosList = component$(() => {
             addOrModify.value = "Añadir"
         }
     })
+
     const handleInputChange = $((event: any) => {
         const target = event.target as HTMLInputElement
         form[target.name] = target.value
@@ -60,6 +72,7 @@ export const PlatosList = component$(() => {
         form.precio = plato.precio
         form.disponibilidad = plato.disponibilidad
     })
+
     const cleanForm = $(() => {
         form.nombre = ""
         form.descripcion = ""
@@ -70,8 +83,8 @@ export const PlatosList = component$(() => {
     return (
         <div class="flex justify-center">
             <div>
-                <div class="px-6 py-4 font-bold rounded-lg">
-                    <table class="border-separate border-spacing-2">
+                <div class="principal">
+                    <table class=" border-separate border-spacing-2 w-full">
                         <thead>
                             <tr>
                                 <th class="title">Nombre</th>
@@ -94,7 +107,7 @@ export const PlatosList = component$(() => {
                                     <td>
                                         <button
                                             class="bg-red-500"
-                                            onClick$={() => deletePlatoById(plato.nombre)}>
+                                            onClick$={() => deletePlato(plato.nombre)}>
                                             <i class="fa-solid fa-trash"></i>
                                             Borrar
                                         </button>
@@ -113,8 +126,9 @@ export const PlatosList = component$(() => {
                                     </td>
                                 </tr>
                             ))}
-                            <tr>
-                                <form onSubmit$={handleSubmit}>
+                        </tbody>
+                    </table>
+                    <form onSubmit$={handleSubmit} class="ml-7">
                                     <td>
                                         <input required
                                             name='nombre'
@@ -132,26 +146,29 @@ export const PlatosList = component$(() => {
                                         />
                                     </td>
                                     <td>
-                                        <select
-                                            name='categoria'
+                                        <input
+                                            list='categoriaList'
+                                            name="categoria"
+                                            id="categoria"
                                             value={form.categoria}
                                             onInput$={handleInputChange}
-                                            
-                                        >
-                                            <option value="entrante">Entrante</option>
-                                            <option value="principal">Principal</option>
-                                            <option value="postre">Postre</option>
-                                        </select>
-
+                                            />
+                                            <datalist id="categoriaList">
+                                            {store.categorias.map(categoria => (
+                                                <option value={categoria.categoria}></option>
+                                            ))}
+                                            </datalist>
                                     </td>
-                                    <td>
+
+
+                                <td>
                                         <input
                                             name='precio'
                                             type="number" step="0.1"
                                             value={form.precio}
                                             onInput$={handleInputChange}
                                         />
-                                    </td>
+                                </td>
                                     <td>
                                         <select
                                             name="disponibilidad"
@@ -161,7 +178,6 @@ export const PlatosList = component$(() => {
                                             <option value="true">Sí</option>
                                             <option value="false">No</option>
                                         </select>
-
                                     </td>
                                     <td>
                                         <button
@@ -179,11 +195,11 @@ export const PlatosList = component$(() => {
                                             Cancelar
                                         </span>
                                     </td>
-                                </form>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                                        
+                                    </form>
+                                    </div>
+
+
 
                 <button class={platoPrecio.value === 'Todos' ? "button-filter-highlighted" : "button-filter"}
                     onClick$={
@@ -211,7 +227,7 @@ export const PlatosList = component$(() => {
                     Disponibles
                     <i class="fa-solid fa-bowl-food"></i>
                 </button>
-                
+
                 <button class={platoPrecio.value === 'NoDisponible' ? "button-filter-highlighted" : "button-filter"}
                     onClick$={
                         async () => { platoPrecio.value = 'NoDisponible'; store.platos = await getnoDisponibles() }}>

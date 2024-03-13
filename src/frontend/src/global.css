@@ -11,30 +11,32 @@
     .title{
         @apply w-20 h-4 m-2 rounded-md text-white bg-orange-400;
     }
-    table {
-        @apply border border-white rounded-lg text-white; 
+    .principal{
+        @apply px-2 py-5 font-bold rounded-lg text-white text-center justify-center border-separate border-spacing-2;
         border-collapse: collapse; 
         width: 100%; 
+        text-align: center;
         overflow: hidden; 
         background-color: rgba(0, 0, 0, 0.5); 
+        cursor: pointer;
     }
     th,
     td {
-        @apply px-4 py-2 text-center; 
+        @apply w-52 mt-4 mr-3 px-4 py-2 text-center; 
     }
 }
     input{
-        @apply p-1 rounded-md text-black focus:outline-none focus:border-orange-300 focus:border-2;
+        @apply w-52 ml-2 rounded-md flex-row justify-start text-black focus:outline-none focus:border-orange-300 focus:border-2 p-0.5 m-2;
     }
     select{
-        @apply p-1 rounded-md text-black focus:outline-none focus:border-orange-300 focus:border-2;
+        @apply w-52 ml-2 rounded-md text-black focus:outline-none focus:border-orange-300 focus:border-2 p-0.5 m-2;
 
     }
     button{
-        @apply px-2 py-1 rounded-md text-white ;
+        @apply p-1 mr-2 ml-6 px-4 py-2 rounded-md text-white border-spacing-2 ;
     }
     .button{
-        @apply px-2 py-[7px]  rounded-md text-white cursor-pointer;
+        @apply px-4 py-[11px]  rounded-md text-white cursor-pointer;
     }
     i{
         @apply ml-1;
@@ -51,8 +53,6 @@
 
 body{
     background-image: url(/fondonegro.jpg);
-    background-color: black;
-    background-repeat: no-repeat;
     background-size: cover;
 
 }
