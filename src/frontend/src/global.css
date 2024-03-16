@@ -26,10 +26,10 @@
     }
 }
     input{
-        @apply w-52 ml-2 rounded-md flex-row justify-start text-black focus:outline-none focus:border-orange-300 focus:border-2 p-0.5 m-2;
+        @apply w-52 rounded-md flex-row justify-start text-black focus:outline-none focus:border-orange-300 focus:border-2 p-0.5 m-2;
     }
     select{
-        @apply w-52 ml-2 rounded-md text-black focus:outline-none focus:border-orange-300 focus:border-2 p-0.5 m-2;
+        @apply w-52 rounded-md text-black focus:outline-none focus:border-orange-300 focus:border-2 p-0.5 m-2;
 
     }
     button{

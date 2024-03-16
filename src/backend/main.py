@@ -61,6 +61,14 @@ async def create_categoria(categoria: Categoria):
     await db["categorias"].insert_one(categoria_dict)
     return categoria
 
+# Endpoint para borrar una categoria específica por nombre.
+@app.delete("/categorias/{categoria}", response_description="Borra una categoria por el nombre", status_code=204)
+async def delete_categoria(categoria: str):
+    delete_result = await db["categorias"].delete_one({"categoria": categoria})
+
+    if delete_result.deleted_count == 0:
+        raise HTTPException(status_code=404, detail=f"Categoria con nombre {categoria} no se ha encontrado.")
+
 # Endpoint para listar todos los platos.
 @app.get("/platos/", response_description="Lista todas las categorias", response_model=List[Plato])
 async def list_platos():

@@ -50,7 +50,6 @@ export const PlatosList = component$(() => {
             form.nombre = form.nombre.trim();
             form.descripcion = form.descripcion.trim();
             form.categoria = form.categoria.trim();
-         // No es necesario limpiar el precio porque es un número
         if (addOrModify.value === 'Añadir') {
             await addPlato(form)
         } else {
