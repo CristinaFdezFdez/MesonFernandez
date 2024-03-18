@@ -5,7 +5,7 @@ Esta es una aplicación de tipo CRUD que permite gestionar información de un re
 ## Capturas de pantalla
 
 **Interfaz**: 
-Interfaz principal de la aplicación de gestión de restaurante.
+Interfaz principal de la aplicación.
 ![Captura 1](img/MesonFernandez.png)
 **Filtro ascendente**: 
 Vista de los platos ordenados de forma ascendente según el precio.
