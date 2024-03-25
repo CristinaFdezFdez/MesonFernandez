@@ -27,8 +27,32 @@ Lista de categorias, donde se muestra una lista desplegable (datalist) para sele
 
 - Qwik
 - Tailwind
+- Docker
+- Python
 - FastAPI
 - MongoDB
+
+
+<a href="https://qwik.builder.io/" target="_blank" rel="noreferrer"> 
+<img src="https://github.com/CristinaFdezFdez/CristinaFdezFdez/assets/155740893/26c41fca-3cc6-4944-8a8f-674097cf7f36" width="40" height="40"/> </a>
+
+<a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> 
+<img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" width="40" height="40"/> </a>
+
+<a href="https://www.docker.com/" target="_blank" rel="noreferrer"> 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker" width="40" height="40"/> </a>
+
+<a href="https://www.python.org" target="_blank" rel="noreferrer"> 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/> </a>
+
+<a href="https://fastapi.tiangolo.com/" target="_blank" rel="noreferrer"> 
+<img src="https://github.com/CristinaFdezFdez/MesonFernandez/assets/155740893/5b71a9ff-0e53-49c8-b676-371266b7e789" alt="FatAPI" width="40" height="40"/> </a>
+
+  
+<a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> 
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB" width="40" height="40"/> </a>
+
+
 
 ## Enlace al vídeo de demostración
 
