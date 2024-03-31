@@ -4,15 +4,10 @@ Esta es una aplicación de tipo CRUD que permite gestionar información de un re
 
 ## Contenidos
 
-1. [Interfaz](#interfaz)
-2. [Filtro ascendente](#filtro-ascendente)
-3. [Filtro descendente](#filtro-descendente)
-4. [Filtro disponibles](#filtro-disponibles)
-5. [Filtra no disponibles](#filtra-no-disponibles)
-6. [Datalist](#datalist)
-7. [Tecnologías utilizadas](#tecnologías-utilizadas)
-8. [Enlace al vídeo de demostración](#enlace-al-vídeo-de-demostración)
-9. [Créditos](#créditos)
+1. [Capturas de pantalla](#capturas-de-pantalla)
+2. [Tecnologías utilizadas](#tecnologías-utilizadas)
+3. [Enlace al vídeo de demostración](#enlace-al-vídeo-de-demostración)
+4. [Créditos](#créditos)
 
 ## Capturas de pantalla
 
