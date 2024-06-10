@@ -1,4 +1,3 @@
-![ascendente](https://github.com/CristinaFdezFdez/MesonFernandez/assets/155740893/266e8261-a3e5-440b-9e40-93b12b42d57b)# CRUD de Restaurante en Qwik y Fastapi
 
 Esta es una aplicación de tipo CRUD que permite gestionar información de un restaurante. El frontend está desarrollado en Qwik con los estilos usando tailwind y el backend en FastAPI utilizando MongoDB como base de datos.
 
