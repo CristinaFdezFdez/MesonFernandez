@@ -1,4 +1,4 @@
-# CRUD de Restaurante en Qwik y Fastapi
+![ascendente](https://github.com/CristinaFdezFdez/MesonFernandez/assets/155740893/266e8261-a3e5-440b-9e40-93b12b42d57b)# CRUD de Restaurante en Qwik y Fastapi
 
 Esta es una aplicación de tipo CRUD que permite gestionar información de un restaurante. El frontend está desarrollado en Qwik con los estilos usando tailwind y el backend en FastAPI utilizando MongoDB como base de datos.
 
@@ -10,25 +10,11 @@ Esta es una aplicación de tipo CRUD que permite gestionar información de un re
 4. [Créditos](#créditos)
 
 ## Capturas de pantalla
-
-**Interfaz**: 
-Interfaz principal de la aplicación.
-![Captura 1](img/MesonFernandez.png)
-**Filtro ascendente**: 
-Vista de los platos ordenados de forma ascendente según el precio.
-![Captura 2](img/ascendente.png)
-**Filtro descendente**: 
-Vista de los platos ordenados de forma descendente según el precio.
-![Captura 3](img/descendente.png)
-**Filtro disponibles**: 
-Lista de platos disponibles en el restaurante.
-![Captura 4](img/disponibles.png)
-**Filtra no disponibles**: 
-Lista de platos que no están disponibles en el restaurante.
-![Captura 5](img/nodisponible.png)
-**Datalist**: 
-Lista de categorias, donde se muestra una lista desplegable (datalist) para seleccionar opciones de forma más rápida, además de poder añadir categoría nueva.
-![Captura 6](img/datalist.png)
+![MesonFernandez](https://github.com/CristinaFdezFdez/MesonFernandez/assets/155740893/d95ccbb5-8be6-4a61-ada8-e082bcba7633)
+![disponibles](https://github.com/CristinaFdezFdez/MesonFernandez/assets/155740893/badc75c4-315d-4bee-8d69-74e35d020321)
+![descendente](https://github.com/CristinaFdezFdez/MesonFernandez/assets/155740893/1bf91ef1-0cb9-46bb-9ffc-91635a5a8bfe)
+![datalist](https://github.com/CristinaFdezFdez/MesonFernandez/assets/155740893/3268c541-b5bd-4e3e-b266-60e716c4c227)
+![nodisponible](https://github.com/CristinaFdezFdez/MesonFernandez/assets/155740893/c351b817-2849-4f60-affe-89eb3e0c1e2c)
 
 ## Tecnologías utilizadas
 
